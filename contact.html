@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="shortcut icon" href="Image/32x32.png" type="image/x-icon">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="contact.css" />
+    <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <!-- <span class="big-circle"></span> -->
+      <!-- <img src="img/shape.png" class="square" alt="" /> -->
+      <div class="form">
+        <div class="contact-info">
+          <h3 class="title">Let's get in touch</h3>
+          <p class="text">
+            Get a solution for all your concerns & share feedback's for a better experience with a team of professionals always available at your service.
+          </p>
+
+          <div class="info">
+            <div class="information">
+              <img src="Image/location.png" class="icon" alt="" />
+              <p>LIVEPOOLS PRIVATE LIMITED
+                REGISTERED ADDRESS:
+                701 Empresa Building, 2nd Road, Opp BMC Market,
+                Khar West, Mumbai 400052,</p>
+            </div>
+            <div class="information">
+              <img src="Image/email.png" class="icon" alt="" />
+              <p>SUPPORT@BLITZPOOLS.COM</p>
+            </div>
+            <div class="information">
+              <img src="Image/phone.png" class="icon" alt="" />
+              <p>123-456-789</p>
+            </div>
+          </div>
+
+          <div class="social-media">
+            <p>Connect with us :</p>
+            <div class="social-icons">
+              <a href="#">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <span class="circle one"></span>
+          <span class="circle two"></span>
+
+          <form id="submit-form" action=""> 
+            <h3 class="title">Contact us</h3>
+            <div class="input-container">
+              <input type="text" name="name" class="input" required/>
+              <label for="">Username</label>
+              <span>Username</span>
+            </div>
+            <div class="input-container">
+              <input type="email" name="email" class="input" required/>
+              <label for="">Email</label>
+              <span>Email</span>
+            </div>
+            <div class="input-container">
+              <input type="tel" name="phone" class="input" />
+              <label for="">Phone</label>
+              <span>Phone</span>
+            </div>
+            <div class="input-container textarea">
+              <textarea name="message" class="input"></textarea>
+              <label for="">Message</label>
+              <span>Message</span>
+            </div>
+            <input type="submit" value="Send" class="btn" />
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="contact.js"></script>
+       <script>
+        $("#submit-form").submit((e)=>{
+            e.preventDefault()
+            $.ajax({
+                url:"https://script.google.com/macros/s/AKfycbyKzBvaP07mKGuDaBCiuKEUIUWUJVi5AwRPiUT_Vxwej2AouEAafjkjZUQsuDAWyVh2/exec",
+                data:$("#submit-form").serialize(),
+                method:"post",
+                success:function (response){
+                    alert("Form submitted successfully")
+                    window.location.reload()
+                    //window.location.href="https://google.com"
+                },
+                error:function (err){
+                    alert("Something Error")
+    
+                }
+            })
+        })
+    </script>
+  </body>
+</html>
